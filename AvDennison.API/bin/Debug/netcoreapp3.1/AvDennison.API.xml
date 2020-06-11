@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AvDennison.API</name>
+    </assembly>
+    <members>
+        <member name="M:AvDennison.API.Controllers.ArticlesController.Get">
+            <summary>
+            Returns every article in databse
+            </summary>
+            
+            <response code="200">Returns every article in database</response>
+        </member>
+        <member name="M:AvDennison.API.Controllers.ArticlesController.Get(System.Guid)">
+            <summary>
+            Returns article based on Id
+            </summary>
+            
+            <response code="200">Returns article with specified Id</response>
+            <response code="404">Uable to find article with specified Id</response>
+            /// <param name="articleId"></param>
+        </member>
+        <member name="M:AvDennison.API.Controllers.ArticlesController.Insert(AvDennison.API.Contract.Requests.ArticleInsertRequest)">
+            <summary>
+            Inserts new article in the database
+            </summary>
+            
+            <response code="201">Inserts article in the database</response>
+            <response code="400">Unable to insert due to validation errors</response>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AvDennison.API.Controllers.SalesController.GetTotalNumber(AvDennison.API.Contract.Requests.GetSalesPerDayRequest)">
+            <summary>
+            Returns number of sold articles per day
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code = "200">Returns number of sold articles per day</response>
+        </member>
+        <member name="M:AvDennison.API.Controllers.SalesController.GetRevenue(AvDennison.API.Contract.Requests.GetSalesPerDayRequest)">
+            <summary>
+            Returns total revenue per day
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code = "200">Returns total revenue per day</response>
+        </member>
+        <member name="M:AvDennison.API.Controllers.SalesController.GetRevenueByArticle">
+            <summary>
+            Returns revenue grouped by articles
+            </summary>
+            <returns></returns>
+            <response code = "200">Returns revenue grouped by articles</response>
+        </member>
+    </members>
+</doc>
