@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="AvDevAPI" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Jasmina\\source\\repos\\AvDennison\\AvDennison\.API\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="AvDennison.API.Data.DataContext" description="" value="Server=tcp:avdenn.database.windows.net,1433;Database=AvDevDB;PersistSecurityInfo=False;User ID=avdennadmin;Password=&quot;Test1234!&quot;;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\Jasmina\\source\\repos\\AvDennison\\AvDennison\.API\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\AvDennison\.API\.Data\.DataContext\.sql$" />
+  </parameter>
+</parameters>

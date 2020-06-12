@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvBYjN443bUqxzmJkACAWSQAAAAACAAAAAAAQZgAAAAEAACAAAACBf5HhJhgpNHyYsqiCj8Jb6Omu2fI0MELxeZ5HDz2g4QAAAAAOgAAAAAIAACAAAAAfdkUl/JLmOfJ5PmDjU42a3r4o6d/u9pLp7ThHExOA3oAAAAClvj5wIWZxe73rNTU6tC2nKiP71W1H2pW+yKkrK9ChOoF3pEy4BOSpuuO2KM0Fd2MEI5LDcDA4VxsZFoY0F99b//TjN7KqFb4grY36QNrc8ofxfRqpJ1uagWydDgUKZE+3GbteOFym+HXJDU6Ne08xsO/scpafPlyH12EH5FwtckAAAADMiWnKFCB+l2/Ih3plSeoNGM5GIJLz8m9fFwOsRx1DzzgQS1KpOcHzc09e9eeiveJrHt7VHz1kNJDBktTAXj3C</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:avdenn.database.windows.net,1433%3bDatabase=AvDevDB%3bPersistSecurityInfo=False%3bUser ID=avdennadmin%3bPassword="Test1234!"%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="AvDennison.API.Data.DataContext">
+      <Value>Server=tcp:avdenn.database.windows.net,1433%3bDatabase=AvDevDB%3bPersistSecurityInfo=False%3bUser ID=avdennadmin%3bPassword="Test1234!"%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

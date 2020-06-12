@@ -7,8 +7,7 @@ namespace AvDennison.API.Contract.V1
 {
     public class ArticleInsertResponse
     {
-
-        public Guid ArticleId { get; set; }
+        public int ArticleId { get; set; }
         public string ArticleNumber { get; set; }
         public string SalesPrice { get; set; }
     }

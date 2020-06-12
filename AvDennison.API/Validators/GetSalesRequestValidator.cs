@@ -17,7 +17,7 @@ namespace AvDennison.API.Validators
 
             RuleFor(m => m.dateTo)
                 .NotEmpty().WithMessage("End date is required")
-                .GreaterThan(m => m.dateFrom)
+                .GreaterThanOrEqualTo(m => m.dateFrom)
                                 .WithMessage("End date must after Start date");
         }
     }

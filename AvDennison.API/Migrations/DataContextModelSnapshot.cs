@@ -15,15 +15,16 @@ namespace AvDennison.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.4")
+                .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("AvDennison.API.Domain.Article", b =>
                 {
-                    b.Property<Guid>("ArticleId")
+                    b.Property<int>("ArticleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ArticleNumber")
                         .HasColumnType("nvarchar(max)");
@@ -38,9 +39,10 @@ namespace AvDennison.API.Migrations
 
             modelBuilder.Entity("AvDennison.API.Domain.Sale", b =>
                 {
-                    b.Property<Guid>("SaleId")
+                    b.Property<int>("SaleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -52,18 +54,19 @@ namespace AvDennison.API.Migrations
 
             modelBuilder.Entity("AvDennison.API.Domain.SaleItem", b =>
                 {
-                    b.Property<Guid>("SaleItemId")
+                    b.Property<int>("SaleItemId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid>("ArticleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ArticleId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("SaleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("SaleId")
+                        .HasColumnType("int");
 
                     b.HasKey("SaleItemId");
 

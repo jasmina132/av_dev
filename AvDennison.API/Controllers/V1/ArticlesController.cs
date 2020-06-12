@@ -35,6 +35,7 @@ namespace AvDennison.API.Controllers
         [HttpGet(ApiRoutes.Articles.GetAll)]
         public async Task<IActionResult> Get() { 
 
+
              return Ok(await _articlesService.GetArticlesAsync()); 
         }
 
@@ -43,10 +44,10 @@ namespace AvDennison.API.Controllers
         /// </summary>
         /// 
         /// <response code="200">Returns article with specified Id</response>
-        /// <response code="404">Uable to find article with specified Id</response>
+        /// <response code="404">Unable to find article with specified Id</response>
         /// /// <param name="articleId"></param>
         [HttpGet(ApiRoutes.Articles.Get)]
-        public async Task<IActionResult> Get([FromRoute]Guid articleId)
+        public async Task<IActionResult> Get([FromRoute]int articleId)
         {
             var article = await _articlesService.GetArticleByIdAsync(articleId);
 
@@ -69,10 +70,10 @@ namespace AvDennison.API.Controllers
         {
             
             
-            var newId = Guid.NewGuid();
+           
             var article = new Article
             {
-                ArticleId = newId,
+             
                 ArticleNumber = request.ArticleNumber,
                 SalesPrice = request.SalesPrice
                  
@@ -81,7 +82,7 @@ namespace AvDennison.API.Controllers
            var response =  await _articlesService.CreateArticleAsync(request);
             if(response == null)
             {
-                return BadRequest(new { error = "Unable to create article" });
+                return BadRequest(new ErrorResponse(new ErrorModel { Message = "Unable to create article" }));
             }
            
 

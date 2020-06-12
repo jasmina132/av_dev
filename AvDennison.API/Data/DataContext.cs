@@ -12,9 +12,15 @@ namespace AvDennison.API.Data
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
+           
         }
 
-      
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+           
+        //}
+
+
         public DbSet<Article> Articles { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<SaleItem> SaleItems { get; set; }

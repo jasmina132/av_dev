@@ -43,7 +43,7 @@ namespace AvDennison.API.Services
             return await _context.Articles.ToListAsync();
         }
 
-        public async Task<Article> GetArticleByIdAsync(Guid articleId)
+        public async Task<Article> GetArticleByIdAsync(int articleId)
         {
          
             return await _context.Articles.SingleOrDefaultAsync(x => x.ArticleId == articleId);

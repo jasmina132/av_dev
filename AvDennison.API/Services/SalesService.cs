@@ -29,7 +29,7 @@ namespace AvDennison.API.Services
             return await _context.Sales.ToListAsync();
         }
 
-        public async Task<Sale> GetSalesAsync(Guid saleId)
+        public async Task<Sale> GetSalesAsync(int saleId)
         {
             return await _context.Sales.SingleOrDefaultAsync(x => x.SaleId == saleId);
 
@@ -38,141 +38,52 @@ namespace AvDennison.API.Services
         public List<GetNumberByDayResponse> GetSalesByDate(GetSalesPerDayRequest request)
         {
 
-            List<GetNumberByDayResponse> responses = new List<GetNumberByDayResponse>();
+            
 
-
-
-            //var queryRes = (from s in _context.Sales
-            //                from si in _context.SaleItems.Where(si => si.SaleId == s.SaleId).DefaultIfEmpty()
-            //                where s.Date >= request.dateFrom && s.Date <= request.dateTo
-            //                select new
-            //                {
-            //                    s.Date,
-            //                    s.SaleItems
-            //                }).ToList();
-
-            var queryRes = (
-                    from s in _context.Sales
-                    from si in _context.SaleItems.Where(si => si.SaleId == s.SaleId).DefaultIfEmpty()
-                    group si by new { s.Date, s.SaleId } into g
-                    select new
-                    {
-                        date = g.Key.Date,
-                        sum = g.Sum(t => t.Quantity),
-                        saleid = g.Key.SaleId
-                    }).ToList();
-
-
-            foreach (var item in queryRes)
-            {
-                responses.Add(new GetNumberByDayResponse
+            List<GetNumberByDayResponse> response = _context.SaleItems.Include(y => y.Sale).GroupBy(x => x.Sale.Date)
+                .Select(t => new GetNumberByDayResponse
                 {
-                    Day = item.date.DayOfWeek.ToString(),
-                    Date = item.date.ToShortDateString(),
-                    TotalNumber = item.sum
-                });
-            }
+                    Date = t.Key.ToShortDateString(),
+                    TotalNumber = t.Sum(x => x.Quantity)
+                }).ToList();
 
-            return responses;
+
+
+            return response;
         }
 
         public List<GetRevenueByArticleResponse> GetRevenueByArticle()
         {
 
-
-
-            List<GetRevenueByArticleResponse> responses = new List<GetRevenueByArticleResponse>();
-
-            var queryRes = (from s in _context.Articles
-                            from si in _context.SaleItems.Where(st => st.ArticleId == s.ArticleId).DefaultIfEmpty()
-                            select new
-                            {
-                                si.Quantity,
-                                s.ArticleNumber,
-                                s.SalesPrice
-                            }).ToList();
-
-            foreach (var item in queryRes)
+            List<GetRevenueByArticleResponse> responses = _context.Articles.Select(t => new GetRevenueByArticleResponse
             {
-                responses.Add(new GetRevenueByArticleResponse
-                {
-                    ArticleNumber = item.ArticleNumber,
-                    TotalRevenue = item.SalesPrice * item.Quantity
-                });
-            }
+                ArticleId = t.ArticleId,
+                ArticleNumber = t.ArticleNumber,
+                TotalRevenue = t.SalesPrice * t.SaleItems.Sum(x => x.Quantity)
+            }).ToList();
 
+            //OK
             return responses;
         }
         public List<GetSalesRevenuePerDayResponse> GetRevenuePerDay(GetSalesPerDayRequest request)
         {
 
-            List<GetSalesRevenuePerDayResponse> responses = new List<GetSalesRevenuePerDayResponse>();
-
-            var queryRes = (from s in _context.Sales
-                            from si in _context.SaleItems.Where(st => st.SaleId == s.SaleId).DefaultIfEmpty()
-                            from a in _context.Articles.Where(ar => ar.ArticleId == si.ArticleId)
-                            where s.Date >= request.dateFrom && s.Date <= request.dateTo
-                            select new
-                            {
-                                s.Date,
-                                s.SaleItems,
-                                a.SalesPrice,
-                                si.Quantity
-                            }).ToList();
-
-
-
-
-            //var queryRes1 = (
-            //                    from si in _context.SaleItems
-            //                    join a in _context.Articles on si.ArticleId equals a.ArticleId
-            //                    join s in _context.Sales on si.SaleId equals s.SaleId
-            //                    into joined
-            //                    from merged in joined.DefaultIfEmpty()
-            //                    group new { a.SalesPrice, si.Quantity, merged }
-            //                     by new
-            //                     {
-            //                         date = merged.Date,
-            //                         saleid = merged.SaleId,
-            //                         qu = si.Quantity,
-            //                         p = a.SalesPrice
-            //                     } into g
-
-
-            //                    select new
-            //                    {
-            //                        date = g.Key.date,
-            //                        sum = g.Sum(t => t.Quantity * t.SalesPrice),
-            //                        saleid = g.Key.saleid
-            //                    }).GroupBy(x => x.saleid).ToList();
-
-
-
-         // com
-
-
-
-            foreach (var item in queryRes)
-            {
-                responses.Add(new GetSalesRevenuePerDayResponse
+          
+            List<GetSalesRevenuePerDayResponse> response = _context.SaleItems.Include(y => y.Sale).Include(x => x.Article)
+                .Select(t => new GetSalesRevenuePerDayResponse
                 {
-                    Day = item.Date.DayOfWeek.ToString(),
-                    Date = item.Date.ToShortDateString(),
-                    TotalRevenue = item.SalesPrice * item.Quantity
-                });
-            }
-
-            var rep = responses.GroupBy(x => x.Date).Select(x =>
-                            new GetSalesRevenuePerDayResponse
-                            {
-                                Day = (Convert.ToDateTime(x.Key)).DayOfWeek.ToString(),
-                                TotalRevenue = x.Sum(y => y.TotalRevenue),
-                                Date = (Convert.ToDateTime(x.Key)).Date.ToShortDateString()
-
-                            }).ToList();
+                    Date = t.Sale.Date.ToShortDateString(),
+                    TotalRevenue = (t.Quantity * t.Article.SalesPrice)
+                }).ToList().GroupBy(x=> x.Date).Select(a=> new GetSalesRevenuePerDayResponse
+                {
+                    Date = a.Key,
+                    TotalRevenue = a.Sum(x => x.TotalRevenue)
+                }).ToList();
 
 
-            return rep;
+
+            // com
+            return response;
 
         }
 

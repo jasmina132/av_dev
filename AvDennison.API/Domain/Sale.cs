@@ -10,7 +10,7 @@ namespace AvDennison.API.Domain
     public class Sale
     {
         [Key]
-        public Guid SaleId { get; set; }
+        public int SaleId { get; set; }
        
 
         public DateTime Date { get; set; }

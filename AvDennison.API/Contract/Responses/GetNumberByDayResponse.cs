@@ -9,13 +9,12 @@ namespace AvDennison.API.Contract.Responses
 {
     public class GetNumberByDayResponse
     {
-      
-        public string Day { get; set; }
-
+        public string Date { get; set; }
+       
         public int TotalNumber { get; set; }
 
-        public string Date { get; set; }
 
-       
+
+
     }
 }

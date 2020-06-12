@@ -11,13 +11,13 @@
             
             <response code="200">Returns every article in database</response>
         </member>
-        <member name="M:AvDennison.API.Controllers.ArticlesController.Get(System.Guid)">
+        <member name="M:AvDennison.API.Controllers.ArticlesController.Get(System.Int32)">
             <summary>
             Returns article based on Id
             </summary>
             
             <response code="200">Returns article with specified Id</response>
-            <response code="404">Uable to find article with specified Id</response>
+            <response code="404">Unable to find article with specified Id</response>
             /// <param name="articleId"></param>
         </member>
         <member name="M:AvDennison.API.Controllers.ArticlesController.Insert(AvDennison.API.Contract.Requests.ArticleInsertRequest)">

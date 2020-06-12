@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using AvDennison.API.Options;
 using AvDennison.API.Installers;
 using AutoMapper;
+using Microsoft.Extensions.Azure;
 
 namespace AvDennison.API
 {
@@ -38,6 +39,11 @@ namespace AvDennison.API
             services.AddRazorPages().AddNewtonsoftJson();
             services.AddAutoMapper(typeof(Startup));
             services.InstallServicesInAssembly(Configuration);
+
+            services.AddAzureClients(builder =>
+            {
+                builder.AddBlobServiceClient(Configuration["ConnectionStrings:DefaultConnection1"]);
+            });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

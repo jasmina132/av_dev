@@ -15,6 +15,6 @@ namespace AvDennison.API.Services
         
         Task<Article> CreateArticleAsync(ArticleInsertRequest request);
 
-        Task<Article> GetArticleByIdAsync(Guid articleId);
+        Task<Article> GetArticleByIdAsync(int articleId);
     }
 }

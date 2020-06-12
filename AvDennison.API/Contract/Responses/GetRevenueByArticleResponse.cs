@@ -7,6 +7,7 @@ namespace AvDennison.API.Contract.Responses
 {
     public class GetRevenueByArticleResponse
     {
+        public int ArticleId { get; set; }
         public string ArticleNumber { get; set; }
         public decimal TotalRevenue { get; set; }
     }

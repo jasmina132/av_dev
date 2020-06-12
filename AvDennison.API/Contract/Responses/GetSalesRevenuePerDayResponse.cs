@@ -9,7 +9,6 @@ namespace AvDennison.API.Contract.Requests
  
     public class GetSalesRevenuePerDayResponse
     {
-        public string Day { get; set; }
 
         public decimal TotalRevenue { get; set; }
 

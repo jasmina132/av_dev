@@ -9,7 +9,7 @@ namespace AvDennison.API.Domain
     public class Article
     {
         [Key]
-        public Guid ArticleId { get; set; }
+        public int ArticleId { get; set; }
 
         public string ArticleNumber { get; set; }
         public decimal SalesPrice { get; set; }
