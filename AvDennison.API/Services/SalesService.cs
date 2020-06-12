@@ -38,9 +38,10 @@ namespace AvDennison.API.Services
         public List<GetNumberByDayResponse> GetSalesByDate(GetSalesPerDayRequest request)
         {
 
-            
 
-            List<GetNumberByDayResponse> response = _context.SaleItems.Include(y => y.Sale).GroupBy(x => x.Sale.Date)
+            List<GetNumberByDayResponse> response = _context.SaleItems.Include(y => y.Sale)
+                .Where(x => x.Sale.Date >= request.dateFrom && x.Sale.Date <= request.dateTo)
+                .GroupBy(x => x.Sale.Date)
                 .Select(t => new GetNumberByDayResponse
                 {
                     Date = t.Key.ToShortDateString(),
@@ -55,12 +56,13 @@ namespace AvDennison.API.Services
         public List<GetRevenueByArticleResponse> GetRevenueByArticle()
         {
 
-            List<GetRevenueByArticleResponse> responses = _context.Articles.Select(t => new GetRevenueByArticleResponse
-            {
-                ArticleId = t.ArticleId,
-                ArticleNumber = t.ArticleNumber,
-                TotalRevenue = t.SalesPrice * t.SaleItems.Sum(x => x.Quantity)
-            }).ToList();
+            List<GetRevenueByArticleResponse> responses = _context.Articles
+                .Select(t => new GetRevenueByArticleResponse
+                {
+                    ArticleId = t.ArticleId,
+                    ArticleNumber = t.ArticleNumber,
+                    TotalRevenue = t.SalesPrice * t.SaleItems.Sum(x => x.Quantity)
+                }).ToList();
 
             //OK
             return responses;
@@ -68,13 +70,16 @@ namespace AvDennison.API.Services
         public List<GetSalesRevenuePerDayResponse> GetRevenuePerDay(GetSalesPerDayRequest request)
         {
 
-          
-            List<GetSalesRevenuePerDayResponse> response = _context.SaleItems.Include(y => y.Sale).Include(x => x.Article)
+
+            List<GetSalesRevenuePerDayResponse> response = _context.SaleItems
+                .Include(y => y.Sale)
+                .Include(x => x.Article)
+                .Where(x => x.Sale.Date >= request.dateFrom && x.Sale.Date <= request.dateTo)
                 .Select(t => new GetSalesRevenuePerDayResponse
                 {
                     Date = t.Sale.Date.ToShortDateString(),
                     TotalRevenue = (t.Quantity * t.Article.SalesPrice)
-                }).ToList().GroupBy(x=> x.Date).Select(a=> new GetSalesRevenuePerDayResponse
+                }).ToList().GroupBy(x => x.Date).Select(a => new GetSalesRevenuePerDayResponse
                 {
                     Date = a.Key,
                     TotalRevenue = a.Sum(x => x.TotalRevenue)

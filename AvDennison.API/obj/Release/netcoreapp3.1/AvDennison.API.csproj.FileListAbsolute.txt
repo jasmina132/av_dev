@@ -146,7 +146,6 @@ C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.csprojAssemblyReference.cache
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.AssemblyInfoInputs.cache
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.AssemblyInfo.cs
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.MvcApplicationPartsAssemblyInfo.cs
@@ -159,7 +158,6 @@ C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.xml
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.pdb
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.genruntimeconfig.cache
-C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Connected Services\AzureStorage1\ConnectedService.json
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Azure.Core.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Azure.Identity.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Azure.Storage.Blobs.dll
@@ -167,3 +165,4 @@ C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Azure.Storage.Files.Shares.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Azure.Storage.Queues.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Microsoft.Extensions.Azure.dll
+C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Release\netcoreapp3.1\AvDennison.API.csprojAssemblyReference.cache

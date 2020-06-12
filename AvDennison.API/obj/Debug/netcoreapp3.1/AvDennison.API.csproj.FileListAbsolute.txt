@@ -162,8 +162,8 @@ C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\Azure.Storage.Files.Shares.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\Azure.Storage.Blobs.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\Azure.Storage.Queues.dll
-C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\Connected Services\AzureStorage1\ConnectedService.json
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\Azure.Identity.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Azure.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Debug\netcoreapp3.1\AvDennison.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Debug\netcoreapp3.1\AvDennison.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\obj\Debug\netcoreapp3.1\AvDennison.API.csproj.CoreCompileInputs.cache
