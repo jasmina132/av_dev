@@ -14,8 +14,6 @@ C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\FluentValidation.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
-C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll
-C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\System.Web.Http.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -75,7 +73,6 @@ C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\Swashbuckle.Core.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\Jasmina\source\repos\AvDennison\AvDennison.API\bin\Release\netcoreapp3.1\System.Composition.Convention.dll

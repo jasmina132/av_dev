@@ -17,8 +17,15 @@ namespace AvDennison.API.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-          
-           services.AddSingleton<IUriService>(provider =>
+
+            services.AddMvc().AddNewtonsoftJson();
+            services.AddMvc();
+
+            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllersWithViews().AddNewtonsoftJson();
+            services.AddRazorPages().AddNewtonsoftJson();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddSingleton<IUriService>(provider =>
             {
                 var accessor = provider.GetRequiredService<IHttpContextAccessor>();
                 var request = accessor.HttpContext.Request;
@@ -30,8 +37,8 @@ namespace AvDennison.API.Installers
                 options.Filters.Add<ValidationFilter>();
             }).AddFluentValidation(mvcConfiguration => mvcConfiguration.RegisterValidatorsFromAssemblyContaining<Startup>())
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
-  
 
+          
         }
     }
 }
