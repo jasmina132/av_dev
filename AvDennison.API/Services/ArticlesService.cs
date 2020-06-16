@@ -35,12 +35,11 @@ namespace AvDennison.API.Services
 
                 return _mapper.Map<Article>(entity);
             
-           
         }
 
         public async Task<List<Article>> GetArticlesAsync()
         {
-            return await _context.Articles.ToListAsync();
+            return await _context.Articles.Include(x=> x.SaleItems).ToListAsync();
         }
 
         public async Task<Article> GetArticleByIdAsync(int articleId)

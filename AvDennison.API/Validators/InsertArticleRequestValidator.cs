@@ -13,6 +13,7 @@ namespace AvDennison.API.Validators
         {
             RuleFor(x => x.ArticleNumber)
                 .NotEmpty()
+                .MaximumLength(30)
                 .Matches("^[a-zA-Z0-9 ]*$");
 
             RuleFor(x => x.SalesPrice)

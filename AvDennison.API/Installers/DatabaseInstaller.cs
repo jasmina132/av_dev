@@ -18,9 +18,9 @@ namespace AvDennison.API.Installers
             services.AddDbContext<DataContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<DataContext>();
-
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<DataContext>();
+            
             services.AddScoped<IArticlesService, ArticlesService>();
             services.AddScoped<ISalesService, SalesService>();
 

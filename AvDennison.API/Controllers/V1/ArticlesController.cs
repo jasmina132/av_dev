@@ -36,7 +36,14 @@ namespace AvDennison.API.Controllers
         public async Task<IActionResult> Get() { 
 
 
-             return Ok(await _articlesService.GetArticlesAsync()); 
+            var articles = await _articlesService.GetArticlesAsync();
+            if (articles == null)
+                return NotFound();
+
+
+
+            return Ok(_mapper.Map<List<GetArticleResponse>>(articles));
+
         }
 
         /// <summary>
@@ -53,7 +60,7 @@ namespace AvDennison.API.Controllers
 
             if (article == null)
                 return NotFound();
-            return Ok(_mapper.Map<ArticleInsertResponse>(article));
+            return Ok(_mapper.Map<GetArticleResponse>(article));
         }
 
 
@@ -68,9 +75,7 @@ namespace AvDennison.API.Controllers
         [HttpPost(ApiRoutes.Articles.Insert)]
         public async Task<IActionResult> Insert([FromBody]ArticleInsertRequest request)
         {
-            
-            
-           
+             
             var article = new Article
             {
              

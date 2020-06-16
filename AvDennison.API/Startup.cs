@@ -40,10 +40,7 @@ namespace AvDennison.API
             services.AddAutoMapper(typeof(Startup));
             services.InstallServicesInAssembly(Configuration);
 
-            services.AddAzureClients(builder =>
-            {
-                builder.AddBlobServiceClient(Configuration["ConnectionStrings:DefaultConnection1"]);
-            });
+           
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

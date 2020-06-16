@@ -16,7 +16,7 @@ namespace AvDennison.API.Services
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;
-        public SalesService(DataContext context, IMapper mapper) // konstruktor gdje kazemo da podatke dobavljamo preko contexta
+        public SalesService(DataContext context, IMapper mapper) 
         {
             _context = context;
             _mapper = mapper;

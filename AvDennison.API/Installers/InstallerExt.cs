@@ -16,7 +16,7 @@ namespace AvDennison.API.Installers
                      typeof(IInstallers).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract).Select(Activator.CreateInstance).Cast<IInstallers>().ToList();
 
 
-                installers.ForEach(installer => installer.InstallServices(services, configuration));
+              installers.ForEach(installer => installer.InstallServices(services, configuration));
             }
         
     }

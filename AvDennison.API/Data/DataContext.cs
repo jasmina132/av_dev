@@ -15,11 +15,7 @@ namespace AvDennison.API.Data
            
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-           
-        //}
-
+      
 
         public DbSet<Article> Articles { get; set; }
         public DbSet<Sale> Sales { get; set; }
