@@ -75,14 +75,7 @@ namespace AvDennison.API.Controllers
         [HttpPost(ApiRoutes.Articles.Insert)]
         public async Task<IActionResult> Insert([FromBody]ArticleInsertRequest request)
         {
-             
-            var article = new Article
-            {
-             
-                ArticleNumber = request.ArticleNumber,
-                SalesPrice = request.SalesPrice
-                 
-            };
+         
 
            var response =  await _articlesService.CreateArticleAsync(request);
             if(response == null)
