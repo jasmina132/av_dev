@@ -40,7 +40,7 @@ namespace AvDennison.API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             /*
-                Ovo je sranje
+                Ovo je sranje 2
             */
             if (env.IsDevelopment())
             {
